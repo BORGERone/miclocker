@@ -27,3 +27,11 @@ dist-ssr
 src-tauri/target
 src-tauri/Cargo.lock
 **/target
+
+# Generated & local
+.qwen/
+src-tauri/gen/
+src-tauri/icons/
+*.ico
+*.png
+readmetest.md

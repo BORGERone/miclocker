@@ -1,0 +1,19 @@
+{
+  "mic": "Micrófono",
+  "volume": "Volumen",
+  "launchAtStartup": "Iniciar al arrancar",
+  "start": "Iniciar",
+  "stop": "Detener",
+  "active": "Activo",
+  "inactive": "Inactivo",
+  "noMics": "No hay micrófonos disponibles",
+  "launching": "Iniciando...",
+  "stopping": "Deteniendo...",
+  "micLoadError": "Error al cargar micrófonos:",
+  "micSaveError": "Error al guardar micrófono:",
+  "volumeError": "Error al ajustar volumen:",
+  "autoStartError": "Error al guardar configuración de inicio automático:",
+  "startError": "Error al iniciar:",
+  "stopError": "Error al detener:",
+  "linkError": "No se pudo abrir el enlace:"
+}

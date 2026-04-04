@@ -1,0 +1,19 @@
+{
+  "mic": "Mikrofon",
+  "volume": "G\u0142o\u015bno\u015b\u0107",
+  "launchAtStartup": "Uruchamiaj przy starcie",
+  "start": "Uruchom",
+  "stop": "Zatrzymaj",
+  "active": "Aktywny",
+  "inactive": "Nieaktywny",
+  "noMics": "Brak dost\u0119pnych mikrofon\u00f3w",
+  "launching": "Uruchamianie...",
+  "stopping": "Zatrzymywanie...",
+  "micLoadError": "B\u0142\u0105d podczas \u0142adowania mikrofon\u00f3w:",
+  "micSaveError": "B\u0142\u0105d podczas zapisywania mikrofonu:",
+  "volumeError": "B\u0142\u0105d podczas ustawiania g\u0142o\u015bno\u015bci:",
+  "autoStartError": "B\u0142\u0105d podczas zapisywania ustawienia autostartu:",
+  "startError": "B\u0142\u0105d uruchamiania:",
+  "stopError": "B\u0142\u0105d zatrzymywania:",
+  "linkError": "Nie mo\u017cna otworzy\u0107 linku:"
+}

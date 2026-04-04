@@ -1,0 +1,19 @@
+{
+  "mic": "Mikrofon",
+  "volume": "Lautst\u00e4rke",
+  "launchAtStartup": "Beim Start \u00f6ffnen",
+  "start": "Starten",
+  "stop": "Stoppen",
+  "active": "Aktiv",
+  "inactive": "Inaktiv",
+  "noMics": "Keine Mikrofone verf\u00fcgbar",
+  "launching": "Wird gestartet...",
+  "stopping": "Wird gestoppt...",
+  "micLoadError": "Fehler beim Laden der Mikrofone:",
+  "micSaveError": "Fehler beim Speichern des Mikrofons:",
+  "volumeError": "Fehler beim Einstellen der Lautst\u00e4rke:",
+  "autoStartError": "Fehler beim Speichern der Autostart-Einstellung:",
+  "startError": "Fehler beim Starten:",
+  "stopError": "Fehler beim Stoppen:",
+  "linkError": "Link konnte nicht ge\u00f6ffnet werden:"
+}

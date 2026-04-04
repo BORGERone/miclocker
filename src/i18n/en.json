@@ -1,0 +1,19 @@
+{
+  "mic": "Microphone",
+  "volume": "Volume",
+  "launchAtStartup": "Launch at startup",
+  "start": "Start",
+  "stop": "Stop",
+  "active": "Active",
+  "inactive": "Inactive",
+  "noMics": "No microphones available",
+  "launching": "Starting...",
+  "stopping": "Stopping...",
+  "micLoadError": "Error loading microphones:",
+  "micSaveError": "Error saving microphone:",
+  "volumeError": "Error setting volume:",
+  "autoStartError": "Error saving auto-start setting:",
+  "startError": "Error starting:",
+  "stopError": "Error stopping:",
+  "linkError": "Could not open link:"
+}

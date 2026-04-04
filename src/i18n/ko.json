@@ -1,0 +1,19 @@
+{
+  "mic": "\ub9c8\uc774\ud06c",
+  "volume": "\ubcfc\ub968",
+  "launchAtStartup": "\uc2dc\uc791 \uc2dc \uc2e4\ud589",
+  "start": "\uc2dc\uc791",
+  "stop": "\uc911\uc9c0",
+  "active": "\ud65c\uc131",
+  "inactive": "\ube44\ud65c\uc131",
+  "noMics": "\uc0ac\uc6a9 \uac00\ub2a5\ud55c \ub9c8\uc774\ud06c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4",
+  "launching": "\uc2dc\uc791 \uc911...",
+  "stopping": "\uc911\uc9c0 \uc911...",
+  "micLoadError": "\ub9c8\uc774\ud06c \ub85c\ub4dc \uc624\ub958:",
+  "micSaveError": "\ub9c8\uc774\ud06c \uc800\uc7a5 \uc624\ub958:",
+  "volumeError": "\ubcfc\ub968 \uc124\uc815 \uc624\ub958:",
+  "autoStartError": "\uc790\ub3d9 \uc2dc\uc791 \uc124\uc815 \uc800\uc7a5 \uc624\ub958:",
+  "startError": "\uc2dc\uc791 \uc624\ub958:",
+  "stopError": "\uc911\uc9c0 \uc624\ub958:",
+  "linkError": "\ub9c1\ud06c\ub97c \uc5f4 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4:"
+}

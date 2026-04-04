@@ -1,0 +1,9 @@
+{
+  "identifier": "default",
+  "description": "Default permissions for the app",
+  "local": true,
+  "windows": [
+    "main"
+  ],
+  "permissions": []
+}

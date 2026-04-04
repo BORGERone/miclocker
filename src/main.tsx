@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { invoke } from '@tauri-apps/api/core'
 import App from './App'
 import './index.css'
+import './i18n'
 
 // Отключаем контекстное меню браузера
 document.addEventListener('contextmenu', (e) => e.preventDefault())

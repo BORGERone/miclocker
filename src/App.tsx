@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { invoke } from '@tauri-apps/api/core'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 
 interface Microphone {
@@ -14,6 +15,7 @@ interface AppSettings {
 }
 
 function App() {
+  const { t } = useTranslation()
   const [microphones, setMicrophones] = useState<Microphone[]>([])
   const [selectedMic, setSelectedMic] = useState<string>('')
   const [volume, setVolume] = useState<number>(100)
@@ -58,7 +60,7 @@ function App() {
         setSelectedMic(mics[0].device_id)
       }
     } catch (e) {
-      setError(`Ошибка загрузки микрофонов: ${e}`)
+      setError(`${t('micLoadError')} ${e}`)
     }
   }
 
@@ -66,12 +68,12 @@ function App() {
     if (!selectedMic) return
     try {
       setError(null)
-      setStatus('Запуск...')
+      setStatus(t('launching'))
       await invoke('start_auto_maintain', { deviceId: selectedMic, level: volume })
       setIsMaintaining(true)
       setStatus('')
     } catch (e) {
-      setError(`Ошибка запуска: ${e}`)
+      setError(`${t('startError')} ${e}`)
       setStatus('')
     }
   }
@@ -79,12 +81,12 @@ function App() {
   async function handleStopMaintain() {
     try {
       setError(null)
-      setStatus('Остановка...')
+      setStatus(t('stopping'))
       await invoke('stop_auto_maintain')
       setIsMaintaining(false)
       setStatus('')
     } catch (e) {
-      setError(`Ошибка остановки: ${e}`)
+      setError(`${t('stopError')} ${e}`)
       setStatus('')
     }
   }
@@ -96,7 +98,7 @@ function App() {
       try {
         await invoke('set_microphone_volume', { deviceId: selectedMic, level: newVolume })
       } catch (e) {
-        setError(`Ошибка установки громкости: ${e}`)
+        setError(`${t('volumeError')} ${e}`)
       }
     }
   }
@@ -107,13 +109,13 @@ function App() {
     try {
       await invoke('select_microphone', { deviceId: newMic })
     } catch (e) {
-      setError(`Ошибка сохранения микрофона: ${e}`)
+      setError(`${t('micSaveError')} ${e}`)
     }
     if (isMaintaining) {
       try {
         await invoke('set_microphone_volume', { deviceId: newMic, level: volume })
       } catch (e) {
-        setError(`Ошибка переключения микрофона: ${e}`)
+        setError(`${t('micLoadError')} ${e}`)
       }
     }
   }
@@ -124,22 +126,29 @@ function App() {
     try {
       await invoke('set_auto_start', { enabled })
     } catch (e) {
-      setError(`Ошибка сохранения настройки автозапуска: ${e}`)
+      setError(`${t('autoStartError')} ${e}`)
+    }
+  }
+
+  async function handleOpenGitHub() {
+    try {
+      await invoke('open_url', { url: 'https://github.com/BORGERone/miclocker' })
+    } catch (e) {
+      setError(`${t('linkError')} ${e}`)
     }
   }
 
   return (
     <div className="app">
-      {/* Drag region — вся верхняя полоска */}
       <div className="drag-region" data-tauri-drag-region />
 
       <div className="content">
         <div className="form-group">
           <div className="label-row">
-            <label htmlFor="microphone">Микрофон</label>
+            <label htmlFor="microphone">{t('mic')}</label>
             <div className="status-bar">
               <div className={`status-dot ${isMaintaining ? 'active' : ''}`}></div>
-              <span>{isMaintaining ? 'Активно' : 'Неактивно'}</span>
+              <span>{isMaintaining ? t('active') : t('inactive')}</span>
             </div>
           </div>
           <select
@@ -149,7 +158,7 @@ function App() {
             disabled={isMaintaining}
           >
             {microphones.length === 0 && (
-              <option value="">Нет доступных микрофонов</option>
+              <option value="">{t('noMics')}</option>
             )}
             {microphones.map(mic => (
               <option key={mic.device_id} value={mic.device_id}>
@@ -161,7 +170,7 @@ function App() {
 
         <div className="form-group">
           <div className="volume-header">
-            <label htmlFor="volume">Громкость</label>
+            <label htmlFor="volume">{t('volume')}</label>
             <span className="volume-value">{volume}%</span>
           </div>
           <div className="slider-container">
@@ -189,13 +198,13 @@ function App() {
           className={`btn ${isMaintaining ? 'btn-stop' : 'btn-start'}`}
           onClick={isMaintaining ? handleStopMaintain : handleStartMaintain}
         >
-          {isMaintaining ? 'Остановить' : 'Запустить'}
+          {isMaintaining ? t('stop') : t('start')}
         </button>
 
         <div className="form-group">
           <label className="toggle-label">
             <span className="toggle-text">
-              Запускать при старте
+              {t('launchAtStartup')}
             </span>
             <label className="switch">
               <input
@@ -210,12 +219,12 @@ function App() {
 
         <div className="footer">
           <span className="version">v1.0.0</span>
-          <a href="https://github.com/BORGERone/miclocker" target="_blank" rel="noopener noreferrer" className="github-link">
+          <button onClick={handleOpenGitHub} className="github-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
             GitHub
-          </a>
+          </button>
         </div>
       </div>
     </div>

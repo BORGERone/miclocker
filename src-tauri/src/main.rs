@@ -198,6 +198,11 @@ fn quit_app(app: tauri::AppHandle) {
     app.exit(0);
 }
 
+#[tauri::command]
+fn open_url(url: String) -> Result<(), String> {
+    open::that(&url).map_err(|e| e.to_string())
+}
+
 fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
@@ -277,7 +282,8 @@ fn main() {
             show_window,
             hide_window,
             toggle_window,
-            quit_app
+            quit_app,
+            open_url
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
