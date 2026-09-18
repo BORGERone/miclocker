@@ -35,3 +35,6 @@ src-tauri/icons/
 *.ico
 *.png
 readmetest.md
+
+# Tracked assets
+!docs/preview.png
