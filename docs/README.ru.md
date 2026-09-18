@@ -16,14 +16,13 @@
 </p>
 
 <p align="center">
-  <img width="125" height="125" alt="MicLocker" src="https://github.com/user-attachments/assets/ef7235ba-f842-4f05-89c0-b04d3f216d9a" />
+  <img src="hero.png" alt="MicLocker — фиксация громкости микрофона в Windows" width="880">
 </p>
 
-<h1 align="center">MicLocker</h1>
+<h3 align="center">Зафиксируйте громкость микрофона — и она останется такой</h3>
 
 <p align="center">
-  <b>Зафиксируйте громкость микрофона — и она останется такой.</b><br/>
-  <sub>Мини-утилита для трея Windows, которая переустанавливает выбранный уровень громкости микрофона раз в секунду через Windows Core Audio API.</sub>
+  Небольшая утилита для трея Windows, которая переустанавливает выбранный уровень микрофона раз в секунду через Core Audio API.
 </p>
 
 <p align="center">
@@ -39,7 +38,7 @@
 ## Скриншот
 
 <p align="center">
-  <img src="preview.png" alt="Главное окно MicLocker" width="600">
+  <img src="preview.png" alt="Главное окно MicLocker" width="520">
 </p>
 
 MicLocker живёт в области уведомлений. Выберите устройство ввода, задайте уровень и нажмите **Запустить** — приложение удерживает этот уровень и бесшумно возвращает его, как только что-то попытается его изменить.

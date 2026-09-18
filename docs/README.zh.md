@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img width="125" height="125" alt="MickLock1" src="https://github.com/user-attachments/assets/ef7235ba-f842-4f05-89c0-b04d3f216d9a" />
+  <img src="hero.png" alt="MicLocker 横幅" width="880">
 </p>
 
 ---
@@ -28,7 +28,7 @@ MicLocker 是一款适用于 Windows 的轻量级桌面应用程序，可选择�
 ## 预览
 
 <p align="center">
-  <img src="preview.png" alt="MicLocker" width="600">
+  <img src="preview.png" alt="MicLocker" width="520">
 </p>
 
 ## 功能

@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img width="125" height="125" alt="MickLock1" src="https://github.com/user-attachments/assets/ef7235ba-f842-4f05-89c0-b04d3f216d9a" />
+  <img src="hero.png" alt="MicLocker 배너" width="880">
 </p>
 
 ---
@@ -28,7 +28,7 @@ MicLocker는 Windows용 경량 데스크톱 애플리케이션으로, 특정 오
 ## 미리보기
 
 <p align="center">
-  <img src="preview.png" alt="MicLocker" width="600">
+  <img src="preview.png" alt="MicLocker" width="520">
 </p>
 
 ## 기능

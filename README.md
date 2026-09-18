@@ -16,14 +16,13 @@
 </p>
 
 <p align="center">
-  <img width="125" height="125" alt="MicLocker" src="https://github.com/user-attachments/assets/ef7235ba-f842-4f05-89c0-b04d3f216d9a" />
+  <img src="docs/hero.png" alt="MicLocker — microphone level lock for Windows" width="880">
 </p>
 
-<h1 align="center">MicLocker</h1>
+<h3 align="center">Pin your microphone level — and keep it there</h3>
 
 <p align="center">
-  <b>Pin your microphone level — and keep it there.</b><br/>
-  <sub>A tiny Windows tray utility that re-applies your microphone volume once per second through the Windows Core Audio API.</sub>
+  A small Windows tray utility that re-applies your microphone volume once per second through the Core Audio API.
 </p>
 
 <p align="center">
@@ -39,7 +38,7 @@
 ## Preview
 
 <p align="center">
-  <img src="docs/preview.png" alt="MicLocker main window" width="600">
+  <img src="docs/preview.png" alt="MicLocker main window" width="520">
 </p>
 
 MicLocker lives in the notification area. Pick an input device, choose a level, hit **Start** — the app locks that level and quietly restores it the moment anything tries to change it.

@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img width="125" height="125" alt="MickLock1" src="https://github.com/user-attachments/assets/ef7235ba-f842-4f05-89c0-b04d3f216d9a" />
+  <img src="hero.png" alt="Banner do MicLocker" width="880">
 </p>
 
 ---
@@ -28,7 +28,7 @@ MicLocker é um aplicativo de desktop leve para Windows que permite selecionar u
 ## Prévia
 
 <p align="center">
-  <img src="preview.png" alt="MicLocker" width="600">
+  <img src="preview.png" alt="MicLocker" width="520">
 </p>
 
 ## Funcionalidades
