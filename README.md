@@ -31,8 +31,6 @@
   <a href="https://github.com/BORGERone/miclocker/releases/latest"><img src="https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078D6?style=flat-square&logo=windows11&logoColor=white" alt="Platform"></a>
   <a href="#build-from-source"><img src="https://img.shields.io/badge/built%20with-Tauri%20v2-24C8DB?style=flat-square&logo=tauri&logoColor=white" alt="Tauri v2"></a>
   <a href="https://github.com/BORGERone/miclocker/stargazers"><img src="https://img.shields.io/github/stars/BORGERone/miclocker?style=flat-square&logo=github" alt="Stars"></a>
-  <a href="https://github.com/BORGERone/miclocker/network/members"><img src="https://img.shields.io/github/forks/BORGERone/miclocker?style=flat-square&logo=github" alt="Forks"></a>
-  <a href="https://github.com/BORGERone/miclocker/issues"><img src="https://img.shields.io/github/issues/BORGERone/miclocker?style=flat-square&logo=github" alt="Issues"></a>
   <a href="https://github.com/BORGERone/miclocker/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-00c46a?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -50,24 +48,23 @@ MicLocker lives in the notification area. Pick an input device, choose a level, 
 
 Voice chats, games and conferencing apps love to "help" with your input level: auto-gain, normalization, or a full 100% reset after the device wakes up from sleep. MicLocker keeps a single truth — **the level you set** — and enforces it every second.
 
-- 🔒 **Lock the level** — any drift is corrected on the next tick (≤ 1 second).
-- 🎮 **No more blown-out voice chat** — nobody gets a 100% mic in their ears after a game update resets your slider.
-- 🔌 **Survives reconnects** — if the device disappears and comes back, the level is re-applied automatically.
-- 🪶 **Featherweight** — a native Rust binary with a WebView2 UI; no Electron, no background services, no drivers, no admin rights.
+- **Lock the level** — any drift is corrected on the next tick (≤ 1 second).
+- **Survives reconnects** — if the device disappears and comes back, the level is re-applied automatically.
+- **Native and small** — a Rust binary with a WebView2 UI: no Electron, no background services, no audio drivers, no admin rights.
 
 ## Features
 
 | Feature | Description |
 |---|---|
-| 🎙️ **Device picker** | Lists every active capture endpoint on the system |
-| 🎚️ **Level lock (0–100%)** | Re-applied once per second through `IAudioEndpointVolume` |
-| 🖥️ **Frameless glass UI** | A 380 × 300 window that fades away as soon as it loses focus |
-| 🧲 **Tray resident** | Left-click the tray icon to bring the window back, right-click for the menu |
-| 🚀 **Launch-at-startup mode** | Remembers device + level and starts maintaining as soon as MicLocker starts |
-| 🌍 **12 UI languages** | Picked automatically from the system locale |
-| 💾 **Settings persisted** | Device, level and auto-start survive restarts |
-| 📦 **Portable or installed** | One `.exe`, plus MSI and NSIS installers |
-| 🕵️ **Fully offline** | No telemetry, no accounts, no network calls (except the GitHub button) |
+| **Device picker** | Lists every active capture endpoint on the system |
+| **Level lock (0–100%)** | Re-applied once per second through `IAudioEndpointVolume` |
+| **Frameless glass UI** | A 380 × 300 window that hides itself as soon as it loses focus |
+| **Tray resident** | Left-click the tray icon to bring the window back, right-click for the menu |
+| **Launch-at-startup mode** | Remembers device + level and starts maintaining as soon as MicLocker starts |
+| **12 UI languages** | Picked automatically from the system locale |
+| **Settings persisted** | Device, level and auto-start survive restarts |
+| **Portable or installed** | One `.exe`, plus MSI and NSIS installers |
+| **Offline** | No telemetry, no accounts, no network calls (except the GitHub button) |
 
 ## Download
 
@@ -104,8 +101,7 @@ From that point on the level is re-applied every second. Press **Stop** to relea
 
 **Window behaviour:** the window is frameless and transparent, closes itself as soon as it loses focus (your settings stay applied) and can be reopened from the tray icon at any time. Right-click the tray icon → *Закрыть* (quit) to exit completely.
 
-> [!TIP]
-> To make MicLocker start with Windows, enable **Launch at startup** here, then add a shortcut to `miclocker.exe` into `shell:startup` (press <kbd>Win</kbd>+<kbd>R</kbd>, type `shell:startup`). The app will start in the tray with the lock already engaged.
+**Starting with Windows:** enable **Launch at startup** here, then add a shortcut to `miclocker.exe` into `shell:startup` (press <kbd>Win</kbd>+<kbd>R</kbd>, type `shell:startup`). The app will then start in the tray with the lock already engaged.
 
 ## How it works
 
@@ -119,7 +115,7 @@ From that point on the level is re-applied every second. Press **Stop** to relea
    Windows Core Audio  (src-tauri/src/audio.rs)
                 │  IAudioEndpointVolume::SetMasterVolumeLevelScalar()
                 ▼
-        🎙️  input level  ──►  forced back to the value you chose
+         input level   ──►  forced back to the value you chose
 ```
 
 - Devices are enumerated with `IMMDeviceEnumerator::EnumAudioEndpoints(eCapture, …)`.
@@ -220,12 +216,7 @@ miclocker/
 
 ## Interface languages
 
-The UI ships with 12 locales and follows the system language:
-
-<p align="center">
-  🇬🇧 English · 🇷🇺 Русский · 🇩🇪 Deutsch · 🇪🇸 Español · 🇫🇷 Français · 🇮🇹 Italiano<br/>
-  🇵🇱 Polski · 🇵🇹 Português · 🇯🇵 日本語 · 🇰🇷 한국어 · 🇨🇳 中文 · 🇮🇳 हिन्दी
-</p>
+The UI ships with 12 locales and follows the system language: `en`, `ru`, `de`, `es`, `fr`, `it`, `pl`, `pt`, `ja`, `ko`, `zh`, `hi`.
 
 **Adding a language** is a three-step job:
 
@@ -252,5 +243,5 @@ Released under the [MIT License](https://github.com/BORGERone/miclocker/blob/mai
 ---
 
 <p align="center">
-  <sub>If MicLocker keeps your microphone in check, a ⭐ on the repository helps other people find it.</sub>
+  <sub>If MicLocker is useful to you, a star on the repository helps other people find it.</sub>
 </p>
